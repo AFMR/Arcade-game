@@ -5,7 +5,7 @@ var Enemy = function() {
 
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
-    this.sprite = 'images/enemy-bug.png';
+    this.sprite = 'enemy-bug.png';
 	this.x = 0;
 	this.y = 0;
 	this.speed = 0;
@@ -50,7 +50,7 @@ function detectCollision(object1, object2){
 // a handleInput() method.
 
 var Player = function() {
-    this.sprite = 'images/char-pink-girl.png';
+    this.sprite = 'char-pink-girl.png';
 };
 
 Player.prototype.x = function(x){
