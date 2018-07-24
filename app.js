@@ -1,5 +1,5 @@
 // Enemies our player must avoid
-var Enemy = function() {
+let Enemy = function() {
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
 
@@ -39,7 +39,7 @@ function checkCollisions(){
 function detectCollision(object1, object2){
 	var xDistance = Math.abs(object1.x - object2.x);
 	var yDistance = Math.abs(object1.y - object2.y);
-	if(xDistance <= 50 && yDistance <= 50){
+	if(xDistance <= 70 && yDistance <= 70){
 		player.x=200;
 		player.y=400;
 	}
@@ -51,15 +51,11 @@ function detectCollision(object1, object2){
 
 var Player = function() {
     this.sprite = 'char-pink-girl.png';
+    this.x = 200;
+    this.y = 400;
 };
 
-Player.prototype.x = function(x){
-    this.x=x;
-}
 
-Player.prototype.y = function(y){
-    this.y=y;
-}
 
 Player.prototype.update = function(dt) {
     // You should multiply any movement by the dt parameter
