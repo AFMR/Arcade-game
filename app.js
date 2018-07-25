@@ -1,5 +1,5 @@
 // Enemies our player must avoid
-let Enemy = function() {
+var Enemy = function() {
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
 
@@ -19,7 +19,7 @@ let Enemy = function() {
 			this.x = -100;
 			this.speed = randomSpeed(120, 270);
 		}
-	};
+    };
 };
 
 //----- Draw the enemy on the screen, required method for game
@@ -29,7 +29,7 @@ Enemy.prototype.render = function() {
 
 // check Enemy and Player and/or objet are in the same place (Collision)
 
-function checkCollisions(){
+/*function checkCollisions(){
 	for (let index = 0; index < allEnemies.length; index++) {
 		const enemy = allEnemies[index];
 		detectCollision(player, enemy);
@@ -43,24 +43,25 @@ function detectCollision(object1, object2){
 		player.x=200;
 		player.y=400;
 	}
-}
+} */
 
 // Now write your own player class
 // This class requires an update(), render() and
 // a handleInput() method.
 
 var Player = function() {
-    this.sprite = 'char-pink-girl.png';
-    this.x = 200;
-    this.y = 400;
-};
+	this.sprite = 'char-pink-girl.png';
+	this.x = 200;
+	this.y = 400;
 
-
-
-Player.prototype.update = function(dt) {
-    // You should multiply any movement by the dt parameter
-    // which will ensure the game runs at the same speed for
-    // all computers.
+	this.detectCollision = function(objectToCheck){
+		var xDistance = Math.abs(this.x - objectToCheck.x);
+		var yDistance = Math.abs(this.y - objectToCheck.y);
+		if(xDistance <= 60 && yDistance <= 60){
+			this.x=200;
+			this.y=400;
+		}
+	};
 };
 
 // Draw the enemy on the screen, required method for game
