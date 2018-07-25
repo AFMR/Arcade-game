@@ -39,7 +39,7 @@ function checkCollisions(){
 function detectCollision(object1, object2){
 	var xDistance = Math.abs(object1.x - object2.x);
 	var yDistance = Math.abs(object1.y - object2.y);
-	if(xDistance <= 70 && yDistance <= 70){
+	if(xDistance <= 60 && yDistance <= 60){
 		player.x=200;
 		player.y=400;
 	}
