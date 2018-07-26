@@ -82,8 +82,8 @@ Player.prototype.handleInput = function(keyCode) {
 		}
 		else{
 			alert('You won');
-			player.x=200;
-			player.y=400;
+			this.x=200;
+			this.y=400;
 		}
 	}
 	else if(keyCode === 'down' && this.y < 400){
